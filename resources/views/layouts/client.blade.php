@@ -7,15 +7,20 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="{{ asset('dist/flowbite.min.js') }}"></script>
 </head>
 
-<body>
+<body class="bg-gray-50 dark:bg-gray-800 text-sm font-light">
     @include('partials.client.header')
 
-    @yield('content')
-    
+    <div class="px-48 py-4">
+        @yield('content')
+    </div>
+
     @include('partials.client.footer')
-    
+
+    <script src="{{ asset('dist/flowbite.min.js') }}"></script>
+
 </body>
 
 </html>

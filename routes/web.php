@@ -34,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('client.home');
+    Route::get('/books', [BookController::class, 'index'])->name('client.books.index');
 });
 
 Route::prefix('/auth')->group(function () {
@@ -49,7 +50,6 @@ Route::prefix('/auth')->group(function () {
 });
 
 Route::prefix('/admin')->group(function () {
-
     $resourceRoutes = [
         'categories' => CategoryController::class,
         'authors' => AuthorController::class,
@@ -74,4 +74,8 @@ Route::prefix('/admin')->group(function () {
     foreach ($resourceRoutes as $key => $value) {
         Route::resource($key, $value);
     }
+});
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
 });

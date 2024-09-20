@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="{{ asset('logo-light.svg') }}" type="image/x-icon">
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="{{ asset('dist/flowbite.min.js') }}"></script>
+
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-800 text-sm">
