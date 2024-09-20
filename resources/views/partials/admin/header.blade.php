@@ -116,7 +116,6 @@
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         const logo = document.getElementById('logo');
 
-        // Hàm cập nhật logo dựa vào chủ đề hiện tại
         function updateLogo() {
             if (document.documentElement.classList.contains('dark')) {
                 logo.src = "{{ asset('logo-dark.svg') }}"; // Đường dẫn tới logo dark
@@ -125,7 +124,6 @@
             }
         }
 
-        // Hàm cập nhật biểu tượng toggle
         function updateToggleIcons() {
             if (document.documentElement.classList.contains('dark')) {
                 themeToggleLightIcon.classList.remove('hidden');
@@ -136,7 +134,6 @@
             }
         }
 
-        // Thiết lập chủ đề ban đầu khi tải trang
         if (localStorage.getItem('color-theme') === 'dark' ||
             (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -144,22 +141,18 @@
             document.documentElement.classList.remove('dark');
         }
 
-        // Cập nhật logo và biểu tượng toggle ban đầu
         updateLogo();
         updateToggleIcons();
 
-        // Xử lý sự kiện click để chuyển đổi chủ đề
         themeToggleBtn.addEventListener('click', function() {
             document.documentElement.classList.toggle('dark');
 
-            // Cập nhật lưu trữ chủ đề vào localStorage
             if (document.documentElement.classList.contains('dark')) {
                 localStorage.setItem('color-theme', 'dark');
             } else {
                 localStorage.setItem('color-theme', 'light');
             }
 
-            // Cập nhật biểu tượng toggle và logo sau khi đổi chủ đề
             updateToggleIcons();
             updateLogo();
         });
