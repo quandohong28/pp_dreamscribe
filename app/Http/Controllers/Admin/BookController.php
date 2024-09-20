@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreRecentReadRequest;
-use App\Http\Requests\UpdateRecentReadRequest;
-use App\Models\RecentRead;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBookRequest;
+use App\Http\Requests\UpdateBookRequest;
+use App\Models\Book;
 
-class RecentReadController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class RecentReadController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRecentReadRequest $request)
+    public function store(StoreBookRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class RecentReadController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(RecentRead $recentRead)
+    public function show(Book $book)
     {
         //
     }
@@ -43,7 +44,7 @@ class RecentReadController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RecentRead $recentRead)
+    public function edit(Book $book)
     {
         //
     }
@@ -51,7 +52,7 @@ class RecentReadController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRecentReadRequest $request, RecentRead $recentRead)
+    public function update(UpdateBookRequest $request, Book $book)
     {
         //
     }
@@ -59,7 +60,7 @@ class RecentReadController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RecentRead $recentRead)
+    public function destroy(Book $book)
     {
         //
     }

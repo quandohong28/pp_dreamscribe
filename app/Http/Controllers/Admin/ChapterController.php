@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreWalletRequest;
-use App\Http\Requests\UpdateWalletRequest;
-use App\Models\Wallet;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreChapterRequest;
+use App\Http\Requests\UpdateChapterRequest;
+use App\Models\Chapter;
 
-class WalletController extends Controller
+class ChapterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class WalletController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreWalletRequest $request)
+    public function store(StoreChapterRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class WalletController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Wallet $wallet)
+    public function show(Chapter $chapter)
     {
         //
     }
@@ -43,7 +44,7 @@ class WalletController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Wallet $wallet)
+    public function edit(Chapter $chapter)
     {
         //
     }
@@ -51,7 +52,7 @@ class WalletController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateWalletRequest $request, Wallet $wallet)
+    public function update(UpdateChapterRequest $request, Chapter $chapter)
     {
         //
     }
@@ -59,7 +60,7 @@ class WalletController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Wallet $wallet)
+    public function destroy(Chapter $chapter)
     {
         //
     }

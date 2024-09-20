@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreChapterRequest;
-use App\Http\Requests\UpdateChapterRequest;
-use App\Models\Chapter;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreHistoryRequest;
+use App\Http\Requests\UpdateHistoryRequest;
+use App\Models\History;
 
-class ChapterController extends Controller
+class HistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class ChapterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreChapterRequest $request)
+    public function store(StoreHistoryRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class ChapterController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Chapter $chapter)
+    public function show(History $History)
     {
         //
     }
@@ -43,7 +44,7 @@ class ChapterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Chapter $chapter)
+    public function edit(History $History)
     {
         //
     }
@@ -51,7 +52,7 @@ class ChapterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateChapterRequest $request, Chapter $chapter)
+    public function update(UpdateHistoryRequest $request, History $History)
     {
         //
     }
@@ -59,7 +60,7 @@ class ChapterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Chapter $chapter)
+    public function destroy(History $History)
     {
         //
     }
