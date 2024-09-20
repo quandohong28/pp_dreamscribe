@@ -3,7 +3,7 @@
         [
             'name' => 'Bảng điều khiển',
             'icon' => 'tabler-dashboard',
-            'url' => 'admin.dashboard',
+            'url' => 'dashboard',
         ],
         [
             'name' => 'Truyện',
@@ -12,27 +12,27 @@
                 [
                     'name' => 'Danh mục truyện',
                     'icon' => 'tabler-category',
-                    'url' => 'admin.categories.index',
+                    'url' => 'categories.index',
                 ],
                 [
                     'name' => 'Tất cả truyện',
                     'icon' => 'tabler-book',
-                    'url' => 'admin.books.index',
+                    'url' => 'books.index',
                 ],
                 [
                     'name' => 'Thêm truyện',
                     'icon' => 'tabler-plus',
-                    'url' => 'admin.books.create',
+                    'url' => 'books.create',
                 ],
                 [
                     'name' => 'Tác giả',
                     'icon' => 'tabler-user',
-                    'url' => 'admin.authors.index',
+                    'url' => 'authors.index',
                 ],
                 [
                     'name' => 'Quốc gia',
                     'icon' => 'tabler-flag',
-                    'url' => 'admin.countries.index',
+                    'url' => 'countries.index',
                 ],
             ],
         ],
@@ -43,22 +43,17 @@
                 [
                     'name' => 'Danh sách người dùng',
                     'icon' => 'tabler-users',
-                    'url' => 'admin.users.index',
+                    'url' => 'users.index',
                 ],
                 [
                     'name' => 'Thêm người dùng',
                     'icon' => 'tabler-user-plus',
-                    'url' => 'admin.users.create',
-                ],
-                [
-                    'name' => 'Phân quyền',
-                    'icon' => 'tabler-shield-check',
-                    'url' => 'admin.roles.index',
+                    'url' => 'users.create',
                 ],
                 [
                     'name' => 'Cấp bậc',
                     'icon' => 'tabler-military-rank',
-                    'url' => 'admin.ranks.index',
+                    'url' => 'ranks.index',
                 ],
             ],
         ],
@@ -69,19 +64,19 @@
                 [
                     'name' => 'Tiền tệ',
                     'icon' => 'tabler-currency-dollar',
-                    'url' => 'admin.currencies.index',
+                    'url' => 'currencies.index',
                 ],
                 [
                     'name' => 'Giao dịch',
                     'icon' => 'tabler-exchange',
-                    'url' => 'admin.transactions.index',
+                    'url' => 'transactions.index',
                 ],
             ],
         ],
         [
             'name' => 'Mã giảm giá',
             'icon' => 'tabler-tag',
-            'url' => 'admin.discounts.index',
+            'url' => 'vouchers.index',
         ],
     ];
 @endphp

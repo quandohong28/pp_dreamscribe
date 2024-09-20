@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreVoucherRequest;
-use App\Http\Requests\UpdateVoucherRequest;
-use App\Models\Voucher;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTransactionRequest;
+use App\Http\Requests\UpdateTransactionRequest;
+use App\Models\Transaction;
 
-class VoucherController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class VoucherController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreVoucherRequest $request)
+    public function store(StoreTransactionRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class VoucherController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Voucher $voucher)
+    public function show(Transaction $transaction)
     {
         //
     }
@@ -43,7 +44,7 @@ class VoucherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Voucher $voucher)
+    public function edit(Transaction $transaction)
     {
         //
     }
@@ -51,7 +52,7 @@ class VoucherController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateVoucherRequest $request, Voucher $voucher)
+    public function update(UpdateTransactionRequest $request, Transaction $transaction)
     {
         //
     }
@@ -59,7 +60,7 @@ class VoucherController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Voucher $voucher)
+    public function destroy(Transaction $transaction)
     {
         //
     }

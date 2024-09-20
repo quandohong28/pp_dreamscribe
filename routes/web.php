@@ -1,5 +1,24 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ChapterController;
+use App\Http\Controllers\Admin\CommentController;
+use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\CurrencyController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FavouriteController;
+use App\Http\Controllers\Admin\HistoryController;
+use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\Admin\RankController;
+use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\VoucherController;
+use App\Http\Controllers\Admin\WalletController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,61 +32,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.home');
+Route::prefix('/')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('client.home');
+});
+
+Route::prefix('/auth')->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::post('/login', [AuthController::class, 'postLogin'])->name('auth.postLogin');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+    Route::post('/register', [AuthController::class, 'postRegister'])->name('auth.postRegister');
+    Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('auth.forgotPassword');
+    Route::post('/forgot-password', [AuthController::class, 'postForgotPassword'])->name('auth.postForgotPassword');
+    Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('auth.resetPassword');
+    Route::post('/reset-password', [AuthController::class, 'postResetPassword'])->name('auth.postResetPassword');
 });
 
 Route::prefix('/admin')->group(function () {
 
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    $resourceRoutes = [
+        'categories' => CategoryController::class,
+        'authors' => AuthorController::class,
+        'books' => BookController::class,
+        'users' => UserController::class,
+        'chapters' => ChapterController::class,
+        'comments' => CommentController::class,
+        'contents' => ContentController::class,
+        'countries' => CountryController::class,
+        'currencies' => CurrencyController::class,
+        'favourites' => FavouriteController::class,
+        'histories' => HistoryController::class,
+        'payments' => PaymentController::class,
+        'ranks' => RankController::class,
+        'transactions' => TransactionController::class,
+        'vouchers' => VoucherController::class,
+        'wallets' => WalletController::class,
+    ];
 
-    Route::get('/categories', function () {
-        return view('admin.categories.index');
-    })->name('admin.categories.index');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/books', function () {
-        return view('admin.books.index');
-    })->name('admin.books.index');
-
-    Route::get('/books/create', function () {
-        return view('admin.books.create');
-    })->name('admin.books.create');
-
-    Route::get('/authors', function () {
-        return view('admin.authors.index');
-    })->name('admin.authors.index');
-
-    Route::get('/countries', function () {
-        return view('admin.countries.index');
-    })->name('admin.countries.index');
-    
-    Route::get('/users', function () {
-        return view('admin.users.index');
-    })->name('admin.users.index');
-
-    Route::get('/users/create', function () {
-        return view('admin.users.create');
-    })->name('admin.users.create');
-
-    Route::get('/roles', function () {
-        return view('admin.roles.index');
-    })->name('admin.roles.index');
-
-    Route::get('/ranks', function () {
-        return view('admin.ranks.index');
-    })->name('admin.ranks.index');
-
-    Route::get('/currencies', function () {
-        return view('admin.currencies.index');
-    })->name('admin.currencies.index');
-
-    Route::get('/transactions', function () {
-        return view('admin.transactions.index');
-    })->name('admin.transactions.index');
-
-    Route::get('/discounts', function () {
-        return view('admin.discounts.index');
-    })->name('admin.discounts.index');
+    foreach ($resourceRoutes as $key => $value) {
+        Route::resource($key, $value);
+    }
 });

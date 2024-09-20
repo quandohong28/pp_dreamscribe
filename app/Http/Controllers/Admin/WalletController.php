@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreFavouriteRequest;
-use App\Http\Requests\UpdateFavouriteRequest;
-use App\Models\Favourite;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreWalletRequest;
+use App\Http\Requests\UpdateWalletRequest;
+use App\Models\Wallet;
 
-class FavouriteController extends Controller
+class WalletController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class FavouriteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreFavouriteRequest $request)
+    public function store(StoreWalletRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class FavouriteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Favourite $favourite)
+    public function show(Wallet $wallet)
     {
         //
     }
@@ -43,7 +44,7 @@ class FavouriteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Favourite $favourite)
+    public function edit(Wallet $wallet)
     {
         //
     }
@@ -51,7 +52,7 @@ class FavouriteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFavouriteRequest $request, Favourite $favourite)
+    public function update(UpdateWalletRequest $request, Wallet $wallet)
     {
         //
     }
@@ -59,7 +60,7 @@ class FavouriteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Favourite $favourite)
+    public function destroy(Wallet $wallet)
     {
         //
     }
