@@ -26,7 +26,7 @@ class HomeController extends Controller
             'categories' => $categories,
             'hotBooks' => $hotBooks,
             'freeBooks' => $freeBooks,
-            'vipBooks' => $vipBooks
+            'vipBooks' => $vipBooks,
         ]);
     }
 

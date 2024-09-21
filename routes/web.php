@@ -37,6 +37,7 @@ Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('client.home');
     Route::get('/books', [ClientBookController::class, 'index'])->name('client.books.index');
     Route::get('/books/{slug}', [ClientBookController::class, 'show'])->name('client.books.detail');
+    Route::get('/books/{slug}/chapters/{chapter}', [ClientBookController::class, 'read'])->name('client.books.chapter');
 });
 
 Route::prefix('/auth')->group(function () {
