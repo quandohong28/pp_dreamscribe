@@ -9,6 +9,7 @@ class AuthController extends Controller
 {
     public function login()
     {
+        return view('auth.login');
     }
 
     public function postLogin(Request $request)
@@ -21,6 +22,7 @@ class AuthController extends Controller
 
     public function register()
     {
+        return view('auth.register');
     }
 
     public function postRegister(Request $request)
@@ -29,25 +31,23 @@ class AuthController extends Controller
 
     public function forgotPassword()
     {
+        return view('auth.forgot-password');
     }
 
     public function postForgotPassword(Request $request)
     {
     }
 
-    public function resetPassword($token)
-    {
-    }
-
-    public function postResetPassword(Request $request)
-    {
-    }
-
     public function changePassword()
     {
+        return view('auth.change-password');
     }
 
     public function postChangePassword(Request $request)
+    {
+    }
+
+    public function verifyEmail($token)
     {
     }
 }

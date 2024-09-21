@@ -134,7 +134,6 @@
             </button>
             <a href="{{ route('auth.login') }}"
                 class="px-3 py-1.5 rounded-lg flex items-center gap-2 leading-6 bg-black text-white hover:bg-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-600">
-                Đăng nhập
                 @svg('tabler-login', 'h-5 w-5')
             </a>
         </div>
