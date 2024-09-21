@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VoucherController;
 use App\Http\Controllers\Admin\WalletController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Client\BookController as ClientBookController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,8 +35,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('client.home');
-    Route::get('/books', [BookController::class, 'index'])->name('client.books.index');
-    Route::get('/books/{slug}', [BookController::class, 'show'])->name('client.books.detail');
+    Route::get('/books', [ClientBookController::class, 'index'])->name('client.books.index');
+    Route::get('/books/{slug}', [ClientBookController::class, 'show'])->name('client.books.detail');
+    Route::get('/books/{slug}/chapters/{chapter}', [ClientBookController::class, 'read'])->name('client.books.chapter');
 });
 
 Route::prefix('/auth')->group(function () {
@@ -75,7 +77,8 @@ Route::prefix('/admin')->group(function () {
     foreach ($resourceRoutes as $key => $value) {
         Route::resource($key, $value);
     }
-});
+    
+})->middleware('auth');
 
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);

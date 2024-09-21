@@ -1,6 +1,5 @@
-<a href="{{ route('client.books.detail', ['slug' => $book->slug]) }}"
-    class="relative mb-2 w-[180px] h-[260px] transition-all duration-300 hover:scale-105">
-    <img src="{{ asset('books/' . $book->cover_image) }}" class="w-full h-full object-cover shadow hover:border ">
+<a href="{{ route('client.books.detail', ['slug' => $book->slug]) }}" class="relative mb-2 min-w-[180px] max-w-[180px] min-h-[260px] max-h-[260px] transition-all duration-300 hover:scale-105">
+    <img src="{{ asset('storage/uploads/books/' . $book->cover_image) }}" class="w-full h-full object-cover shadow hover:border">
     <div class="text-white absolute bottom-0 left-0 right-0 p-2 bg-black opacity-50 text-xs">
         <p class="font-semibold line-clamp-2 mb-1">{{ $book->title }}</p>
         <p>{{ $book->number_chapter }} chapter</p>

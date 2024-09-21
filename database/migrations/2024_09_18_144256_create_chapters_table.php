@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->integer('order')->default(0);
+            $table->integer('order')->default(1);
             $table->date('published_date')->nullable();
             $table->foreignId('status')->default(0)->comment('0: Draft, 1: Published');
             $table->integer('like')->default(0);

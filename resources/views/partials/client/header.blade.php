@@ -18,17 +18,17 @@
         ],
         [
             'name' => 'Miễn phí',
-            'list' => 'full',
+            'list' => 'free',
         ],
         [
             'name' => 'Trả phí',
-            'list' => 'full',
+            'list' => 'vip',
         ],
     ];
 @endphp
 
-<header>
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b border-gray" aria-label="Global">
+<header class="sticky top-0 z-50 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-500">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
             <a href="{{ route('client.home') }}">
                 <img id="logo" class="h-8 w-auto" src="{{ asset('logo-light.svg') }}">
@@ -40,7 +40,7 @@
                 @svg('tabler-search', 'h-5 w-5')
             </button>
             {{-- Search modal --}}
-            <div id="searchMobile" class="z-10 hidden bg-white rounded-lg shadow w-96 dark:bg-gray-700 p-4">
+            <div id="searchMobile" class="z-1000 hidden bg-white rounded-lg shadow w-96 dark:bg-gray-700 p-4">
                 <form class="flex items-center max-w-sm mx-auto">
                     <label for="simple-search" class="sr-only">Search</label>
                     <div class="relative w-full">
@@ -77,7 +77,7 @@
                 Danh sách truyện
                 @svg('tabler-caret-down-filled', 'h-4 w-4 ml-1')
             </button>
-            <div id="bookList" class="z-10 hidden bg-white rounded-lg shadow w-96 dark:bg-gray-700">
+            <div id="bookList" class="z-1000 hidden bg-white rounded-lg shadow w-96 dark:bg-gray-700">
                 <div class="py-2 grid grid-cols-2 text-gray-700 dark:text-gray-200 gap-2">
                     @foreach ($bookList as $item)
                         <a href="{{ route('client.books.index', ['list' => $item['list']]) }}"
@@ -134,7 +134,6 @@
             </button>
             <a href="{{ route('auth.login') }}"
                 class="px-3 py-1.5 rounded-lg flex items-center gap-2 leading-6 bg-black text-white hover:bg-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-600">
-                Đăng nhập
                 @svg('tabler-login', 'h-5 w-5')
             </a>
         </div>

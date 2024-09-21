@@ -9,7 +9,7 @@
             <span class=" text-xs font-medium me-2 px-2.5 py-0.5 rounded bg-red-600 text-white">hot</span>
         </h1>
         <div class="relative w-full overflow-hidden">
-            <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory py-8 bg-cover bg-center">
+            <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory py-8">
                 @foreach ($hotBooks as $book)
                     @component('components.book', ['book' => $book])
                     @endcomponent
