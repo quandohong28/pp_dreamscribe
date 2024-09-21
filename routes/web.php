@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('client.home');
     Route::get('/books', [BookController::class, 'index'])->name('client.books.index');
+    Route::get('/books/{slug}', [BookController::class, 'show'])->name('client.books.detail');
 });
 
 Route::prefix('/auth')->group(function () {
