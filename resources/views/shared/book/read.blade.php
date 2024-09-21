@@ -13,7 +13,6 @@
         </div> --}}
 
         {{-- content text --}}
-
         {{-- <div class="p-4 lg:px-64 transition-all duration-300">
             <h1 class="text-lg uppercase font-semibold text-gray-900 dark:text-white mb-4">Chương {{ $chapter->order }} -
                 {{ $chapter->title }}</h1>
@@ -94,25 +93,10 @@
         </div> --}}
 
         {{-- content audio --}}
-        <div class="p-4 lg:px-64 transition-all duration-300">
-            <h1 class="text-lg uppercase font-semibold text-gray-900 dark:text-white mb-4">Chương {{ $chapter->order }} -
-                {{ $chapter->title }}</h1>
-            <div class="flex items-center gap-4 mb-8">
-                <button
-                    class="bg-black text-white p-2 rounded-full hover:bg-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700">
-                    @svg('tabler-player-play', 'h-5 w-5')
-                </button>
-                <div class="flex flex-col">
-                    <p class="font-semibold">Nghe chương này</p>
-                    <p class="text-gray-500 dark:text-gray-400">Bấm vào nút phát để nghe chương này</p>
-                </div>
-            </div>
-        </div>
-
-        {{-- audio navigation --}}
         <div
-            class="fixed bottom-0 left-0 right-0 z-50 py-4 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
-            <div class="w-3/4 md:w-1/2 mx-auto transition-all duration-300">
+            class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+            <p class="mb-8 font-semibold text-gray-700 text-center">Chap {{ $chapter->order }} - {{ $chapter->title }}</p>
+            <div class="md:w-1/2 mx-auto transition-all duration-300">
                 <div class="flex items-center justify-center mx-auto mb-1">
                     <button data-tooltip-target="tooltip-mute" type="button"
                         class="p-2.5 rounded-full hover:bg-gray-100 text-gray-600">
@@ -166,7 +150,7 @@
         </div>
 
         {{-- navigation - neu nhu la truyen audio thi an cai nay di va nguoc lai --}}
-        <div class="flex justify-center">
+        {{-- <div class="flex justify-center">
             <div
                 class="fixed bottom-4 bg-white border rounded px-4 py-2 w-11/12 md:w-2/3 lg:w-1/2 font-normal transition-all duration-300">
                 <div class="flex items-center justify-center gap-2">
@@ -201,11 +185,10 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- config modal --}}
-
-        <div id="configModal" tabindex="-1" aria-hidden="true"
+        {{-- <div id="configModal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-2xl max-h-full">
                 <!-- Modal content -->
@@ -277,7 +260,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 @endsection
