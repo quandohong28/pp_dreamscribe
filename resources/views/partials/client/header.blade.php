@@ -1,11 +1,11 @@
 @php
     $bookList = [
         [
-            'name' => 'Tất cả truyện',
+            'name' => 'Tất cả',
             'list' => 'all',
         ],
         [
-            'name' => 'Truyện mới cập nhật',
+            'name' => 'Mới cập nhật',
             'list' => 'new',
         ],
         [
@@ -13,7 +13,15 @@
             'list' => 'hot',
         ],
         [
-            'name' => 'Truyện full',
+            'name' => 'Truyện Full',
+            'list' => 'full',
+        ],
+        [
+            'name' => 'Miễn phí',
+            'list' => 'full',
+        ],
+        [
+            'name' => 'Trả phí',
             'list' => 'full',
         ],
     ];
@@ -63,33 +71,31 @@
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
             <a href="{{ route('client.home') }}"
-                class="leading-6 text-gray-900 uppercase dark:text-gray-300 dark:hover:text-white">Trang chủ</a>
+                class="font-semibold leading-6 text-gray-900 uppercase dark:text-gray-300 dark:hover:text-white">Trang chủ</a>
             <button type="button" data-dropdown-toggle="bookList" data-dropdown-delay="0"
-                class="flex items-center gap-2 leading-6 text-gray-900 uppercase dark:text-gray-300 dark:hover:text-white">
+                class="font-semibold flex items-center gap-2 leading-6 text-gray-900 uppercase dark:text-gray-300 dark:hover:text-white">
                 Danh sách truyện
                 @svg('tabler-caret-down-filled', 'h-4 w-4 ml-1')
             </button>
-            <div id="bookList" class="z-10 hidden bg-white rounded-lg shadow w-64 dark:bg-gray-700">
-                <ul class="py-2 text-gray-700 dark:text-gray-200">
+            <div id="bookList" class="z-10 hidden bg-white rounded-lg shadow w-96 dark:bg-gray-700">
+                <div class="py-2 grid grid-cols-2 text-gray-700 dark:text-gray-200 gap-2">
                     @foreach ($bookList as $item)
-                        <li>
-                            <a href="{{ route('client.books.index', ['list' => $item['list']]) }}"
-                                class="flex items-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                @svg('tabler-chevron-right', 'h-4 w-4 mr-1')
-                                {{ $item['name'] }}
-                            </a>
-                        </li>
+                        <a href="{{ route('client.books.index', ['list' => $item['list']]) }}"
+                            class="flex items-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            @svg('tabler-chevron-right', 'h-4 w-4 mr-1')
+                            {{ $item['name'] }}
+                        </a>
                     @endforeach
-                </ul>
+                </div>
             </div>
             <button type="button" data-dropdown-toggle="categories" data-dropdown-delay="0"
-                class="flex items-center gap-2 leading-6 text-gray-900 uppercase dark:text-gray-300 dark:hover:text-white">
+                class="font-semibold flex items-center gap-2 leading-6 text-gray-900 uppercase dark:text-gray-300 dark:hover:text-white">
                 Thể loại
                 @svg('tabler-caret-down-filled', 'h-4 w-4 ml-1')
             </button>
             <div id="categories"
                 class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-96 dark:bg-gray-700">
-                <div class="grid grid-cols-2 text-gray-700 dark:text-gray-200 gap-2">
+                <div class="py-2 grid grid-cols-2 text-gray-700 dark:text-gray-200 gap-2">
                     @foreach ($categories as $category)
                         <a href="{{ route('client.books.index', ['category' => $category->slug]) }}"
                             class="flex items-center gap-2 px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
