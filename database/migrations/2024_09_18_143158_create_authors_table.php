@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('fullname');
             $table->string('slug')->unique();
             $table->string('avatar')->nullable()->default('user-default.png');
-            $table->text('biography')->nullable();
+            $table->text('bio')->nullable();
             $table->date('birthday')->nullable();
             $table->date('deathday')->nullable();
             $table->timestamps();

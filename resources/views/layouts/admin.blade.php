@@ -29,6 +29,49 @@
     </footer>
 
     <script src="{{ asset('dist/flowbite.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+            const logo = document.getElementById('logo');
+
+            function updateLogo() {
+                logo.src = document.documentElement.classList.contains('dark') ? "{{ asset('logo-dark.svg') }}" : "{{ asset('logo-light.svg') }}";
+            }
+
+            function updateToggleIcons() {
+                const isDarkMode = document.documentElement.classList.contains('dark');
+                // Update  icons
+                if (isDarkMode) {
+                    themeToggleLightIcon.classList.remove('hidden');
+                    themeToggleDarkIcon.classList.add('hidden');
+                } else {
+                    themeToggleDarkIcon.classList.remove('hidden');
+                    themeToggleLightIcon.classList.add('hidden');
+                }
+            }
+
+            // Kiểm tra và thiết lập chế độ tối
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            updateLogo();
+            updateToggleIcons();
+
+            themeToggleBtn.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+                updateToggleIcons();
+                updateLogo();
+                localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            });
+        });
+    </script>
+
 </body>
 
 </html>

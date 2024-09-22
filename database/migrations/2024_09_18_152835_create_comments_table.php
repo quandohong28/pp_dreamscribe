@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->integer('chapter_order');
             $table->text('content');
             $table->integer('status')->default(1)->comment('0: Hide, 1: Show');
             $table->integer('like')->default(0);

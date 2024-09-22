@@ -4,8 +4,8 @@
         <p class="font-semibold line-clamp-2 mb-1">{{ $book->title }}</p>
         <p>{{ $book->number_chapter }} chapter</p>
         <div class="flex items-center gap-2">
-            <span class="flex items-center gap-1">{{ $book->likes }} @svg('tabler-heart', 'h-3 w-3')</span>
-            <span class="flex items-center gap-1">{{ $book->views }} @svg('tabler-eye', 'h-3 w-3')</span>
+            <span class="flex items-center gap-1">{{ $book->view }} @svg('tabler-eye', 'h-3 w-3')</span>
+            <span class="flex items-center gap-1">{{ $book->like }} @svg('tabler-heart', 'h-3 w-3')</span>
         </div>
     </div>
     <div class="absolute top-0 right-0">

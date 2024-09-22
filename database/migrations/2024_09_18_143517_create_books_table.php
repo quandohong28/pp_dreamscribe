@@ -22,9 +22,10 @@ return new class extends Migration
             $table->integer('number_chapter')->default(0);
             $table->integer('status')->default(0)->comment('0: Draft, 1: Published');
             $table->integer('is_completed')->default(0)->comment('0: No, 1: Yes');
-            $table->integer('kind')->default(0)->comment('0: free, 1: vip');
             $table->integer('price')->default(0);
             $table->integer('discount_price')->default(0);
+            $table->integer('view')->default(0);
+            $table->integer('like')->default(0);
             $table->foreignId('category_id')->constrained();
             $table->foreignId('author_id')->constrained();
             $table->foreignId('country_id')->constrained();

@@ -1,9 +1,9 @@
-<footer class="bg-white dark:bg-slate-900">
+<footer class="bg-white dark:bg-slate-800">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0 gap-4">
                 <a href="{{ route('client.home') }}" class="flex items-center">
-                    <img src="{{ asset('logo-light.svg') }}" class="h-8 me-3" alt="FlowBite Logo" />
+                    <img id="logo" src="{{ asset('logo-light.svg') }}" class="h-8 me-3" alt="FlowBite Logo" />
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-4 sm:gap-16 sm:grid-cols-4">

@@ -15,44 +15,60 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Fantasy',
-                'slug' => 'fantasy',
+                'name' => 'Hành động',
+                'slug' => 'hanh-dong',
             ],
             [
-                'name' => 'Science Fiction',
-                'slug' => 'science-fiction',
+                'name' => 'Phiêu lưu',
+                'slug' => 'phieu-luu',
             ],
             [
-                'name' => 'Mystery',
-                'slug' => 'mystery',
+                'name' => 'Manga',
+                'slug' => 'manga',
             ],
             [
-                'name' => 'Horror',
-                'slug' => 'horror',
+                'name' => 'Manhua',
+                'slug' => 'manhua',
             ],
             [
-                'name' => 'Romance',
-                'slug' => 'romance',
+                'name' => 'Manhwa',
+                'slug' => 'manhwa',
             ],
             [
-                'name' => 'Western',
-                'slug' => 'western',
+                'name' => 'Comic',
+                'slug' => 'comic',
             ],
             [
-                'name' => 'Thriller',
-                'slug' => 'thriller',
+                'name' => 'Chuyển sinh',
+                'slug' => 'chuyen-sinh',
             ],
             [
-                'name' => 'Dystopian',
-                'slug' => 'dystopian',
+                'name' => 'Kinh dị',
+                'slug' => 'kinh-di',
             ],
             [
-                'name' => 'Memoir',
-                'slug' => 'memoir',
+                'name' => 'Lãng mạn',
+                'slug' => 'lang-man',
             ],
             [
-                'name' => 'Biography',
-                'slug' => 'biography',
+                'name' => 'Hài hước',
+                'slug' => 'hai-huoc',
+            ],
+            [
+                'name' => 'Cổ đại',
+                'slug' => 'co-dai',
+            ],
+            [
+                'name' => 'Ngôn tình',
+                'slug' => 'ngon-tinh',
+            ],
+            [
+                'name' => 'Xuyên không',
+                'slug' => 'xuyen-khong',
+            ],
+            [
+                'name' => 'Ảo tưởng',
+                'slug' => 'ao-tuong',
             ],
         ];
 

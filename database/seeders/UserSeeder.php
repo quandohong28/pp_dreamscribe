@@ -17,10 +17,9 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'fullname' => 'Test User',
+                'email' => 'testuser@gmail.com',
                 'username' => 'testuser',
                 'password' => Hash::make('12345678'),
-                'alias' => 'Trác Phàm',
-                'joined_at' => now(),
                 'birthday' => '1990-01-01',
                 'role' => 0,
                 'rank_id' => 1,
@@ -29,10 +28,9 @@ class UserSeeder extends Seeder
             ],
             [
                 'fullname' => 'Admin User',
+                'email' => 'admin@gmail.com',
                 'username' => 'adminuser',
                 'password' => Hash::make('12345678'),
-                'alias' => 'Tư Mã Ý',
-                'joined_at' => now(),
                 'birthday' => '1990-01-01',
                 'role' => 0,
                 'rank_id' => 1,

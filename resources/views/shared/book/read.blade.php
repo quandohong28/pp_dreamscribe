@@ -5,16 +5,16 @@
 @section('content')
     <div class="min-h-screen">
 
-        {{-- content image --}}
+        {{-- content image - chưa render --}}
         {{-- <div class="lg:px-64 transition-all duration-300">
             <div class="mb-24">
                 <img class="w-full" src="https://ddntcthcd.com/nettruyen/vo-dich-don-ngo/1/2.jpg" alt="">
             </div>
         </div> --}}
 
-        {{-- content text --}}
-        {{-- <div class="p-4 lg:px-64 transition-all duration-300">
-            <h1 class="text-lg uppercase font-semibold text-gray-900 dark:text-white mb-4">Chương {{ $chapter->order }} -
+        {{-- content text - chưa render--}}
+        <div class="p-4 lg:px-64 transition-all duration-300 text-gray-900 dark:text-gray-300">
+            <h1 class="text-lg uppercase font-semibold mb-4">Chương {{ $chapter->order }} -
                 {{ $chapter->title }}</h1>
             <p class="mb-24 text-base">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque blanditiis ea voluptatem consectetur illo
@@ -90,16 +90,16 @@
                 non accusamus saepe quae, quisquam deleniti. Accusantium voluptate illum est aperiam, vitae nulla vero
                 veritatis? Adipisci facilis nemo iure sed iste ad unde.
             </p>
-        </div> --}}
+        </div>
 
         {{-- content audio --}}
-        <div
+        {{-- <div
             class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
             <p class="mb-8 font-semibold text-gray-700 text-center">Chap {{ $chapter->order }} - {{ $chapter->title }}</p>
             <div class="md:w-1/2 mx-auto transition-all duration-300">
                 <div class="flex items-center justify-center mx-auto mb-1">
                     <button data-tooltip-target="tooltip-mute" type="button"
-                        class="p-2.5 rounded-full hover:bg-gray-100 text-gray-600">
+                        class="p-2.5 rounded-full hover:bg-gray-100 text-gray-600 dark:text-white dark:hover:text-black">
                         @svg('tabler-volume-2', 'w-5 h-5')
                     </button>
                     <div id="tooltip-mute" role="tooltip"
@@ -107,7 +107,7 @@
                         Tắt âm lượng
                     </div>
                     <button data-tooltip-target="tooltip-previous" type="button"
-                        class="p-2.5 rounded-full hover:bg-gray-100  text-gray-600">
+                        class="p-2.5 rounded-full hover:bg-gray-100  text-gray-600 dark:text-white dark:hover:text-black">
                         @svg('tabler-player-skip-back', 'w-5 h-5')
                     </button>
                     <div id="tooltip-previous" role="tooltip"
@@ -115,7 +115,7 @@
                         Tập trước
                     </div>
                     <button data-tooltip-target="tooltip-pause" type="button"
-                        class="p-2.5 rounded-full bg-black text-white hover:bg-gray-700">
+                        class="p-2.5 rounded-full bg-black text-white hover:bg-gray-700 dark:bg-white dark:text-black mx-4">
                         @svg('tabler-player-pause', 'w-5 h-5')
                     </button>
                     <div id="tooltip-pause" role="tooltip"
@@ -123,7 +123,7 @@
                         Tạm dừng
                     </div>
                     <button data-tooltip-target="tooltip-next" type="button"
-                        class="p-2.5 rounded-full hover:bg-gray-100 text-gray-600">
+                        class="p-2.5 rounded-full hover:bg-gray-100 text-gray-600 dark:text-white dark:hover:text-black">
                         @svg('tabler-player-skip-forward', 'w-5 h-5')
                     </button>
                     <div id="tooltip-next" role="tooltip"
@@ -131,7 +131,7 @@
                         Tập tiếp theo
                     </div>
                     <button data-tooltip-target="tooltip-restart" type="button"
-                        class="p-2.5 group rounded-full hover:bg-gray-100 text-gray-600">
+                        class="p-2.5 group rounded-full hover:bg-gray-100 text-gray-600 dark:text-white dark:hover:text-black">
                         @svg('tabler-refresh', 'w-5 h-5')
                     </button>
                     <div id="tooltip-restart" role="tooltip"
@@ -142,17 +142,19 @@
                 <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
                     <span class="text-sm font-medium text-gray-500 dark:text-gray-400">3:45</span>
                     <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-800">
-                        <div class="bg-black h-1.5 rounded-full" style="width: 65%"></div>
+                        <div class="bg-black dark:bg-white h-1.5 rounded-full" style="width: 65%"></div>
                     </div>
                     <span class="text-sm font-medium text-gray-500 dark:text-gray-400">5:00</span>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-        {{-- navigation - neu nhu la truyen audio thi an cai nay di va nguoc lai --}}
-        {{-- <div class="flex justify-center">
+        {{-- navigation
+        - neu nhu la truyen audio thi an cai nay di va nguoc lai
+        - chưa xử lý next, prev, yêu thích --}}
+        <div class="flex justify-center">
             <div
-                class="fixed bottom-4 bg-white border rounded px-4 py-2 w-11/12 md:w-2/3 lg:w-1/2 font-normal transition-all duration-300">
+                class="fixed bottom-4 bg-white dark:bg-slate-800 border dark:border-gray-500 rounded px-4 py-2 w-11/12 md:w-2/3 lg:w-1/2 font-normal transition-all duration-300">
                 <div class="flex items-center justify-center gap-2">
                     <a href="{{ route('client.home') }}"
                         class="bg-white text-black border p-1.5 rounded hover:bg-gray-100 dark:bg-gray-100 dark:text-black">
@@ -167,7 +169,7 @@
                         @svg('tabler-chevron-left', 'h-5 w-5')
                     </a>
                     <select
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full px-3 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded block w-full px-3 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
                         @foreach ($book->chapters->all() as $chapter)
                             <option
                                 value="{{ route('client.books.chapter', ['slug' => $book->slug, 'chapter' => $chapter->slug]) }}">
@@ -185,10 +187,12 @@
                     </a>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
-        {{-- config modal --}}
-        {{-- <div id="configModal" tabindex="-1" aria-hidden="true"
+        {{-- config modal
+        - phải mở cả cái này nữa nhé
+        - chưa xử lý logic --}}
+        <div id="configModal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-2xl max-h-full">
                 <!-- Modal content -->
@@ -260,7 +264,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 
 @endsection

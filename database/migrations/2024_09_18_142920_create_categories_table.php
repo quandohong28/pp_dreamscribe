@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->integer('is_hot')->default(0)->comment('0: No, 1: Yes');
             $table->timestamps();
             $table->softDeletes();
         });

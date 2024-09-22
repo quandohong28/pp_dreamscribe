@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VoucherController;
 use App\Http\Controllers\Admin\WalletController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\Client\BookController as ClientBookController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,8 @@ Route::prefix('/')->group(function () {
 Route::prefix('/auth')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::post('/login', [AuthController::class, 'postLogin'])->name('auth.postLogin');
+    Route::get('/google', [GoogleAuthController::class, 'redirect'])->name('auth.google.redirect');
+    Route::get('/google/call-back', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
     Route::post('/register', [AuthController::class, 'postRegister'])->name('auth.postRegister');
@@ -77,7 +80,6 @@ Route::prefix('/admin')->group(function () {
     foreach ($resourceRoutes as $key => $value) {
         Route::resource($key, $value);
     }
-    
 })->middleware('auth');
 
 Route::fallback(function () {

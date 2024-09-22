@@ -27,7 +27,7 @@
     ];
 @endphp
 
-<header class="sticky top-0 z-50 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-500">
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-500">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
             <a href="{{ route('client.home') }}">
@@ -140,7 +140,7 @@
     </nav>
 </header>
 
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
         const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
         const themeToggleDarkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
@@ -206,4 +206,4 @@
                 'dark' : 'light');
         });
     });
-</script>
+</script> -->

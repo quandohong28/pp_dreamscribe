@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('fullname');
             $table->string('username')->unique();
+            $table->string('email')->unique();
             $table->string('avatar')->nullable()->default('user-default.png');
-            $table->string('alias')->nullable();
-            $table->date('joined_at')->nullable();
             $table->date('birthday')->nullable();
             $table->integer('status')->default(1)->comment('1: Active, 0: Inactive');
             $table->integer('role')->default(0)->comment('0: User, 1: Admin, 2: Super Admin');
-            $table->foreignId('rank_id')->constrained();
-            $table->string('password');
+            $table->foreignId('rank_id')->constrained()->nullable()->default(1);
+            $table->string('password')->nullable();
+            $table->string('google_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

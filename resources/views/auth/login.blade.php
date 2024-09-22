@@ -7,15 +7,21 @@
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a href="{{ route('client.home') }}"
                 class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                <img class="w-32" src="{{ asset('logo-light.svg') }}" alt="logo">
+                <img id="logo" class="h-8 w-auto" src="{{ asset('logo-light.svg') }}">
             </a>
             <div
                 class="w-full sm:w-1/2 bg-white rounded-lg shadow
                     dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                @if (session('error'))
+                        {{ session('error') }}
+                @endif
+
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 class="font-bold uppercase text-gray-900 dark:text-white">
                         đăng nhập
                     </h1>
+
+                    {{-- Đăng nhập thường --}}
                     <form class="space-y-4 md:space-y-6" action="#">
                         <div>
                             <label for="username" class="block mb-2 font-medium text-gray-900 dark:text-white">Tên người
@@ -41,17 +47,29 @@
                                     <label for="remember" class="text-gray-500 dark:text-gray-300">Lưu đăng nhập</label>
                                 </div>
                             </div>
-                            <a href="{{route('auth.forgotPassword')}}"
-                                class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Quên mật khẩu</a>
+                            <a href="{{ route('auth.forgotPassword') }}"
+                                class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">Quên mật
+                                khẩu</a>
                         </div>
                         <button type="submit"
                             class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Đăng
                             nhập</button>
-                        <p class=font-light text-gray-500 dark:text-gray-400">
-                            Chưa có tài khoản <a href="{{ route('auth.register') }}"
-                                class="font-medium text-blue-600 hover:underline dark:text-blue-500">Đăng ký</a>
-                        </p>
                     </form>
+
+                    {{-- Đăng nhập bằng Google --}}
+                    <div>
+                        <p class="dark:text-gray-300 text-xs text-center mb-2">hoặc</p>
+                        <a href="{{ route('auth.google.redirect') }}"
+                            class="flex items-center justify-center gap-2 w-full text-black bg-white border hover:bg-gray-100 font-medium rounded-lg px-5 py-2.5 dark:bg-slate-900 dark:text-white dark:border-gray-500 dark:hover:bg-slate-800">
+                            @svg('tabler-brand-google-filled')
+                            Đăng nhập với Google</a>
+                    </div>
+
+
+                    <p class=font-light text-gray-500 dark:text-gray-400">
+                        <span class="dark:text-white">Chưa có tài khoản</span> <a href="{{ route('auth.register') }}"
+                            class="font-medium text-blue-600 hover:underline dark:text-blue-500">Đăng ký</a>
+                    </p>
                 </div>
             </div>
         </div>

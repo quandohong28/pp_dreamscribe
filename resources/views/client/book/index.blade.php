@@ -4,10 +4,11 @@
 
 @section('content')
     <div class="grid grid-cols-1 lg:grid-cols-3 p-4 gap-4 dark:text-gray-300">
-        <div id="filter-collapse" data-accordion="collapse" class="bg-white dark:bg-slate-900 rounded-lg">
+        <!-- Filter -->
+        <div id="filter-collapse" data-accordion="collapse" class="bg-white dark:bg-slate-800 rounded-lg">
             <h2 id="filter-collapse-heading">
                 <button type="button"
-                    class="flex items-center justify-between w-full p-4 font-medium rtl:text-right rounded-t-lg dark:text-gray-300 dark:bg-black"
+                    class="flex items-center justify-between w-full p-4 font-medium rtl:text-right rounded-lg bg-white dark:text-gray-300 dark:bg-slate-800"
                     data-accordion-target="#filter-collapse-body" aria-expanded="true" aria-controls="filter-collapse-body">
                     <span class="font-semibold uppercase">Bộ lọc</span>
                     @svg('tabler-chevron-down', 'w-4 h-4')
@@ -129,7 +130,9 @@
                 </form>
             </div>
         </div>
-        <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-lg p-8">
+
+        <!-- Danh sách truyện đã lọc -->
+        <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-lg p-8">
             <p class="font-semibold uppercase mb-2">Danh sách truyện</p>
             <p class="mb-4 italic">Kết quả tìm kiếm "harry"</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">

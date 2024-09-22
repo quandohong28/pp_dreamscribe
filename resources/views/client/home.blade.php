@@ -3,6 +3,10 @@
 @section('title', 'Trang chủ')
 
 @section('content')
+
+    {{ Auth::user() }}
+
+    {{-- Truyện HOT --}}
     <div class="bg-white dark:bg-slate-900 dark:text-gray-300 p-8 rounded-lg m-4">
         <h1 class="uppercase font-semibold flex items-center gap-1">
             Truyện
@@ -16,10 +20,12 @@
                 @endforeach
             </div>
         </div>
-
     </div>
+
     <div class="p-4 grid lg:grid-cols-3 grid-cols-1 gap-4">
         <div class="lg:col-span-2 min-h-screen bg-white dark:bg-slate-900 dark:text-gray-300 p-8 rounded-lg">
+
+            {{-- Truyện miễn phí --}}
             <div class="mb-8">
                 <h1 class="uppercase font-semibold mb-4 flex items-center gap-1">Top
                     <span
@@ -33,6 +39,8 @@
                     @endforeach
                 </div>
             </div>
+
+            {{-- Truyện VIP --}}
             <div class="mb-8">
                 <h1 class="uppercase font-semibold mb-4 flex items-center gap-1">
                     Top truyện
@@ -45,6 +53,8 @@
                     @endforeach
                 </div>
             </div>
+
+            {{-- Tất cả truyện --}}
             <div class="mb-8">
                 <h1 class="uppercase font-semibold mb-4 flex items-center gap-1">Tất cả truyện</h1>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-8 mb-4">
@@ -99,6 +109,8 @@
             </div>
         </div>
         <div class="min-h-screen bg-white dark:bg-slate-900 dark:text-gray-300 p-8 rounded-lg">
+
+            {{-- Truyện yêu thích --}}
             <div class="mb-8">
                 <div class="flex items-center justify-between mb-4">
                     <h1 class="uppercase font-semibold flex items-center gap-1">
@@ -126,6 +138,8 @@
                     </a>
                 @endfor
             </div>
+
+            {{-- Lịch sử đọc truyện --}}
             <div class="mb-8">
                 <div class="flex items-center justify-between mb-4">
                     <h1 class="uppercase font-semibold flex items-center gap-1">
